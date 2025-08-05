@@ -1,0 +1,19 @@
+// This code is written by - Asim Husain
+
+import React from "react";
+import InterviewScreen from "./pages/InterviewScreen";
+import "./styles/App.css";
+import MouseTrail from "./components/MouseTrail"; 
+
+function App() {
+  return (
+    <>
+      <MouseTrail /> {/* Background animation */}
+      <div className="app-container" style={{ position: "relative", zIndex: 1 }}>
+        <InterviewScreen />
+      </div>
+    </>
+  );
+}
+
+export default App;

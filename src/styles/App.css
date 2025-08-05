@@ -1,0 +1,344 @@
+/* This code is written by - Asim Husain */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Global */
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* App Container */
+.app-container {
+  margin-top: -40px;
+  width: 900px;
+  background: transparent;
+  padding: 20px;
+  border-radius: 45px;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.main-heading {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #1D4ED8;
+  font-size: 90px;
+  margin: 10px 0 20px;
+}
+
+/* Landing Card Controls */
+.landing-controls {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.landing-controls label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: #353535;
+  text-align: center;
+}
+
+/* Role Selector */
+select,
+input[type="number"] {
+  font-family: 'Poppins', sans-serif;
+  padding: 0px 10px;
+  border-radius: 12px;
+  font-size: 18px;
+  border: 1.5px solid #ccc;
+  background-color: white;
+  color: black;
+  text-align: center;
+  height: 40px;
+  width: 160px;
+  box-sizing: border-box;
+}
+
+select:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: #808080;
+}
+
+/* Question & Feedback Box */
+.question-box, .feedback-box {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #060606;
+}
+
+.question-box {
+  background: transparent;
+}
+
+.feedback-box {
+  background: transparent;
+  border-radius: 25px;
+}
+
+/* Answer Input + Mic */
+.answer-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.answer-box {
+  width: 100%;
+  height: 150px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 20px;
+  border: 1px #4b4a4a;
+  background: #ebebeb;
+  color: black;
+  box-sizing: border-box;
+  resize: vertical;
+  line-height: 1.5;
+  overflow-y: auto;
+}
+
+.answer-box:focus {
+  outline: none;
+  border: 1px #4b4a4a;
+  box-shadow: none;
+}
+
+/* Mic button inside input */
+.mic-icon-btn {
+  position: absolute;
+  top: 80%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mic-icon-btn img {
+  width: 27px;
+  height: 27px;
+}
+
+/* Buttons */
+.mic-btn, .next-btn, .submit-btn {
+  font-family: 'Poppins', sans-serif;
+  background: #1D4ED8;
+  color: rgb(248, 246, 246);
+  padding: 9px 13px;
+  border: none;
+  border-radius: 13px;
+  margin: 10px auto 0 auto;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mic-btn:hover, .next-btn:hover, .submit-btn:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Back Button */
+.back-button {
+  position: fixed;
+  top: 35px;
+  left: 35px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  padding: 0;
+}
+
+.back-button img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform 0.2s ease-in-out;
+}
+
+.back-button:hover img {
+  transform: scale(1.1);
+}
+
+/* Splash Screen */
+.splash-screen {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.splash-text {
+  font-size: 48px;
+  color: #1D4ED8;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeZoom 3s ease-in-out forwards;
+  text-align: center;
+}
+
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*  Feedback Heading */
+.feedback-heading {
+  font-size: 32px;
+  font-family: 'Poppins', sans-serif;
+  color: #1D4ED8;
+  text-align: center;
+}
+
+.feedback-box pre {
+  background-color: #1e1e1e;
+  color: #f8f8f2;
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+}
+
+
+
+
+/* MOBILE RESPONSIVE FIXES */
+@media (max-width: 768px) {
+  .app-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .main-heading {
+    font-size: 38px;
+    margin: 10px 0 20px;
+    text-align: center;
+  }
+
+  .landing-controls {
+    display: flex;
+    flex-direction: row;   
+    gap: 10px;
+    padding: 30px 0;
+    margin: 10px 0 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .landing-controls::-webkit-scrollbar {
+    display: none; 
+  }
+
+  .landing-controls label {
+    flex: 0 0 auto;             
+    min-width: 170px;            
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  select,
+  input[type="number"] {
+    width: 100%;
+    max-width: 160px;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .question-box {
+    margin: 0 auto;
+    padding: 16px;
+    width: 100%;
+    max-width: 95%;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .answer-box {
+    height: 120px;
+    font-size: 14px;
+    padding: 12px 16px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 12px auto;
+  }
+
+  .mic-icon-btn {
+    position: absolute;
+    top: 70%;
+    right: 12px;
+  }
+
+  .feedback-heading {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .splash-text {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .feedback-box pre {
+    font-size: 12px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+
+  .mic-btn,
+  .next-btn,
+  .submit-btn {
+    width: 83%;
+    font-size: 15px;
+    display: block;
+    margin: 12px auto;
+    text-align: center;
+  }
+}
