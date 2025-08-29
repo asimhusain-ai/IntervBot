@@ -2,18 +2,18 @@
 
 import React from "react";
 import InterviewScreen from "./pages/InterviewScreen";
-import "./styles/App.css";
-import MouseTrail from "./components/MouseTrail"; 
+import "./styles/App.css"; 
 
 function App() {
   return (
     <>
-      <MouseTrail /> {/* Background animation */}
+       {/* Background animation */}
       <div className="app-container" style={{ position: "relative", zIndex: 1 }}>
         <InterviewScreen />
       </div>
     </>
   );
 }
+
 
 export default App;
